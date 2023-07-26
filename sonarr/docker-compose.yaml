@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Sao_Paulo
+      # - USER=username #optional
+      # - PASS=password #optional
+      # - WHITELIST=iplist #optional
+      # - PEERPORT=peerport #optional
+      # - HOST_WHITELIST=dnsname list #optional
+    volumes:
+      - ./config:/config
+      - ./media:/media
+    restart: unless-stopped
+    network_mode: host

@@ -1,0 +1,4 @@
+/target
+sonarr/config
+.env
+*.sqlite
